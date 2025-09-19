@@ -1,17 +1,34 @@
-$body-bg: #fff;
-$body-color: #111;
+// Custom theme colors
+$body-bg: #121212;  // Spotify-like dark background
+$body-color: #ffffff;
 
-$blue:    #283d42;
-$indigo:  #6610f2 !default;
-$purple:  #6f42c1 !default;
-$pink:    #e83e8c !default;
-$red:     #e72d2d !default;
-$orange:  #b6683a;
-$yellow:  #ffc107 !default;
-$green:   #28a745 !default;
-$teal:    #20c997 !default;
-$cyan:    #17a2b8 !default;
+// Custom color palette
+$primary: #1DB954;    // Spotify green
+$secondary: #535353;  // Dark grey
+$dark: #040404;       // Darker shade for contrast
+$light: #b3b3b3;     // Light grey for text
 
-$font-family-monospace:  Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+// Custom font
+$font-family-base: 'Circular', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+$headings-font-family: $font-family-base;
 
-$headings-font-family: $font-family-monospace;
+// Custom styles
+$border-radius: 0.5rem;
+$card-bg: $secondary;
+$navbar-dark-bg: $dark;
+
+// Custom container padding
+$container-padding-x: 1.5rem;
+
+// Custom navbar styling
+$navbar-dark-color: $light;
+$navbar-dark-hover-color: $primary;
+
+// Custom button styling
+$btn-border-radius: 1.5rem;
+$btn-padding-x: 2rem;
+$btn-padding-y: 0.5rem;
+
+// Hover effects
+$link-color: $primary;
+$link-hover-color: lighten($primary, 15%);

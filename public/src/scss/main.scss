@@ -1,2 +1,31 @@
 @import "custom";
 @import "~bootstrap/scss/bootstrap";
+
+// Additional custom styles
+.navbar {
+    border-bottom: 1px solid $secondary;
+}
+
+.card {
+    transition: transform 0.2s;
+    &:hover {
+        transform: scale(1.02);
+    }
+}
+
+.music-item {
+    background: $secondary;
+    border-radius: $border-radius;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.artist-image {
+    border-radius: 50%;
+    border: 2px solid $primary;
+}
+
+.album-cover {
+    border-radius: $border-radius;
+    box-shadow: 0 4px 60px rgba(0,0,0,0.5);
+}
