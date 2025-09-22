@@ -1,22 +1,42 @@
+<?php
+// Define variables with different data types
+$pageTitle = "Music Library"; // String
+$isLoggedIn = false; // Boolean
+$songCount = 5; // Integer
+$rating = 4.5; // Float
+$songs = array( // Array
+    'Blinding Lights',
+    'Shape of You',
+    'Bad Guy',
+    'Uptown Funk',
+    'Someone Like You'
+);
+
+// Example of string interpolation with double quotes
+$welcomeMessage = "Welcome to {$pageTitle}!";
+
+// Example of escaping characters
+$description = 'Our library\'s rating is ' . $rating . ' stars!';
+?>
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title><?php echo $pageTitle; ?></title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
     <link href="/dist/css/main.min.css" rel="stylesheet"> <!-- Compiled CSS file -->
-    <script src="/dist/js/main.js" defer></script>
+    <script src="/dist/js/main.js"></script>
   </head>
-  <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <body class="bg-dark text-light">
+    <nav class="navbar navbar-expand-lg navbar-dark">
       <div class="container">
-        <a class="navbar-brand" href="#">Home Page</a>
+        <a class="navbar-brand" href="#"><?php echo $pageTitle; ?></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">x
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="#">Home</a>
@@ -48,15 +68,31 @@
     </nav>
 
     <div class="container my-5">
-      <h1>Hello, world!</h1>
+      <h1><?php echo $welcomeMessage; ?></h1>
       <div class="col-lg-8 px-0">
-        <p class="fs-5">You've successfully loaded up the Bootstrap starter example. It includes <a href="https://getbootstrap.com/">Bootstrap 5</a> via the <a href="https://www.jsdelivr.com/package/npm/bootstrap">jsDelivr CDN</a> and includes an additional CSS and JS file for your own code.</p>
-        <p>Feel free to download or copy-and-paste any parts of this example.</p>
+        <p class="fs-5"><?php echo $description; ?></p>
+        
+        <!-- Display songs using a foreach loop -->
+        <div class="row">
+          <?php foreach($songs as $song): ?>
+            <div class="col-md-4 mb-4">
+              <div class="card bg-secondary text-light">
+                <div class="card-body">
+                  <h5 class="card-title"><?php echo htmlspecialchars($song); ?></h5>
+                </div>
+              </div>
+            </div>
+          <?php endforeach; ?>
+        </div>
 
         <hr class="col-1 my-4">
 
-        <a href="https://getbootstrap.com" class="btn btn-primary">Read the Bootstrap docs</a>
-        <a href="https://github.com/twbs/examples" class="btn btn-secondary">View on GitHub</a>
+        <!-- Use boolean for conditional rendering -->
+        <?php if ($isLoggedIn): ?>
+          <p>You are logged in! You can manage your playlist.</p>
+        <?php else: ?>
+          <p>Please log in to manage your playlist.</p>
+        <?php endif; ?>
       </div>
     </div>
 
@@ -64,3 +100,4 @@
     <script src="main.js"></script>
   </body>
 </html>
+
