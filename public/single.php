@@ -15,7 +15,6 @@ require_once '../views/header.php';
 
 <div class="container my-5">
     <h1>Single Track</h1>
-    <!-- Your single track content here -->
 </div>
 
 <?php require_once '../views/footer.php'; ?>

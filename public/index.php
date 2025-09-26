@@ -12,6 +12,7 @@ $songs = array( // Array
     'Someone Like You'
 );
 
+
 // Example of string interpolation with double quotes
 $welcomeMessage = "Welcome to {$pageTitle}!";
 
@@ -32,37 +33,7 @@ $description = 'Our library\'s rating is ' . $rating . ' stars!';
   <body class="bg-dark text-light">
 
     <?php require_once '../views/header.php'; ?>
-  
-
-    <div class="container my-5">
-      <h1><?php echo $welcomeMessage; ?></h1>
-      <div class="col-lg-8 px-0">
-        <p class="fs-5"><?php echo $description; ?></p>
-        
-        <!-- Display songs using a foreach loop -->
-        <div class="row">
-          <?php foreach($songs as $song): ?>
-            <div class="col-md-4 mb-4">
-              <div class="card bg-secondary text-light">
-                <div class="card-body">
-                  <h5 class="card-title"><?php echo ($song); ?></h5>
-                </div>
-              </div>
-            </div>
-          <?php endforeach; ?>
-        </div>
-
-        <hr class="col-1 my-4">
-
-        <!-- Use boolean for conditional rendering -->
-        <?php if ($isLoggedIn): ?>
-          <p>You are logged in! You can manage your playlist.</p>
-        <?php else: ?>
-          <p>Please log in to manage your playlist.</p>
-        <?php endif; ?>
-      </div>
-    </div>
-
+    <?php require_once '../views/data.php'; ?>
 
     
     <?php require_once '../views/footer.php'; ?>
