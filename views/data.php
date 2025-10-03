@@ -1,7 +1,9 @@
 <?php
 require_once(__DIR__ . '/../source/database.php');
 
-// Query met JOINs voor artiest en genre
+// Query met JOINs voor artiest en genre 
+// <img class="card-img-top" src="/img/covers/<?php echo ($song['image']); ">
+
 $query = 'SELECT 
     songs.id, 
     songs.title,    

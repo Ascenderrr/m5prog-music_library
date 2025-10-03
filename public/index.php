@@ -4,6 +4,7 @@ $pageTitle = "Music Library"; // String
 $isLoggedIn = false; // Boolean
 $songCount = 5; // Integer
 $rating = 4.5; // Float
+$image = null; // Null
 $songs = array( // Array
     'Blinding Lights',
     'Shape of You',
