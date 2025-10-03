@@ -7,6 +7,7 @@
         <p>Genre: <?php echo ($song['genre_name']); ?></p>
         <p>Duur: <?php echo ($song['duration']); ?></p>
         <p>Jaar: <?php echo ($song['release_year']); ?></p>
-        <a href="/single.php?singleid=<?php echo ($song['id']); ?>" class="btn btn-primary">Bekijk</a>
+        <a href="/single/<?php echo ($song['slug']); ?>" class="btn btn-primary">Bekijk</a>
     </div>
 </div>
+

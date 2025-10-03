@@ -19,7 +19,7 @@ define('DB_NAME', isset($env_array['DB_NAME']) ? $env_array['DB_NAME'] : 'music_
 define('DB_USERNAME', isset($env_array['DB_USERNAME']) ? $env_array['DB_USERNAME'] : 'music_user');
 define('DB_PASSWORD', isset($env_array['DB_PASSWORD']) ? $env_array['DB_PASSWORD'] : 'wachtwoord');
 
-/**
+/** 
  * Maak MySQLi database verbinding
  */
 $connection = new mysqli(DB_HOST, DB_USERNAME, DB_PASSWORD, DB_NAME);
