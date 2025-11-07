@@ -1,9 +1,6 @@
 <?php
 require_once(__DIR__ . '/../source/database.php');
 
-// Query met JOINs voor artiest en genre 
-// <img class="card-img-top" src="/img/covers/<?php echo ($song['image']); ">
-
 $query = 'SELECT 
     songs.id, 
     songs.title,    
@@ -12,20 +9,25 @@ $query = 'SELECT
     songs.duration,
     songs.slug,
     artists.name AS artist_name, 
+    artists.image_url AS artist_image,
     genres.name AS genre_name 
 FROM songs 
-
 LEFT JOIN artists ON songs.artist_id = artists.id 
 LEFT JOIN genres ON songs.genre_id = genres.id 
 ORDER BY songs.title ASC';
 
-
 $stmt = $connection->prepare($query);
 $stmt->execute();
 $result = $stmt->get_result();
+?>
 
-while ($song = mysqli_fetch_assoc($result)): ?>
-    <?php include(__DIR__ . '/card.php'); ?>
-<?php endwhile; ?>
+<div class="container my-5">
+    <h1 class="mb-4">Music Library</h1>
+    <div class="row">
+        <?php while ($song = mysqli_fetch_assoc($result)): ?>
+            <?php include(__DIR__ . '/card.php'); ?>
+        <?php endwhile; ?>
+    </div>
+</div>
 
 
